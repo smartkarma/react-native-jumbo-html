@@ -1,0 +1,54 @@
+{
+  "parser": "babel-eslint",
+  "plugins": ["react", "react-native", "flowtype", "prettier", "standard"],
+  "parserOptions": {
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true,
+      "modules": true
+    }
+  },
+  "extends": [
+    "eslint:recommended",
+    "airbnb-base",
+    "airbnb",
+    "plugin:flowtype/recommended",
+    "plugin:react/recommended",
+    "prettier",
+    "prettier/flowtype",
+    "prettier/react",
+    "prettier/standard"
+  ],
+  "rules": {
+    "max-len": ["error", { "code": 100, "ignoreUrls": true }],
+    "arrow-body-style": "warn",
+    "no-return-assign": "off",
+    "class-methods-use-this": "off",
+    "global-require": "off",
+    "jsx-a11y/href-no-hash": "off",
+    "react/display-name": "off",
+    "react/require-default-props": "off",
+    "react/jsx-filename-extension": [
+      "warn",
+      {
+        "extensions": [".js", ".jsx"]
+      }
+    ],
+    "react/forbid-prop-types": "off",
+    "no-multiple-empty-lines": [
+      "warn",
+      {
+        "max": 1
+      }
+    ],
+    "react-native/no-unused-styles": 2,
+    "react-native/split-platform-components": 0,
+    "react-native/no-inline-styles": 2,
+    "react-native/no-color-literals": 2,
+    "no-use-before-define": 0,
+    "prettier/prettier": "error",
+    "no-plusplus": [2, {
+      "allowForLoopAfterthoughts": true
+    }]
+  }
+}

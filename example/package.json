@@ -1,0 +1,8 @@
+{
+  "name": "react-native-jumbo-html-example",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "description": "Example app for react-native-jumbo-html-example",
+  "private": true
+}

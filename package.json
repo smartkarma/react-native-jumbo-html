@@ -1,0 +1,79 @@
+{
+  "name": "react-native-jumbo-html",
+  "version": "0.1.0",
+  "description": "Render HTML tags as React Native components",
+  "main": "src/index.js",
+  "files": [
+    "src/"
+  ],
+  "scripts": {
+    "test": "jest",
+    "flow": "flow",
+    "lint": "eslint ."
+  },
+  "keywords": [
+    "react-native-component",
+    "react-component",
+    "react-native",
+    "ios",
+    "android",
+    "html"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/smartkarma/react-native-jumbo-html.git"
+  },
+  "author": "Satyajit Sahoo <satyajit.happy@gmail.com> (https://github.com/satya164/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/smartkarma/react-native-jumbo-html/issues"
+  },
+  "homepage": "https://github.com/smartkarma/react-native-jumbo-html#readme",
+  "dependencies": {
+    "css-to-react-native": "^2.0.4",
+    "htmlparser2-without-node-native": "^3.9.2",
+    "prop-types": "^15.6.0"
+  },
+  "devDependencies": {
+    "babel-eslint": "^8.1.2",
+    "babel-jest": "^21.2.0",
+    "babel-preset-react-native": "^4.0.0",
+    "enzyme": "3.2.0",
+    "enzyme-adapter-react-16": "^1.1.0",
+    "enzyme-to-json": "^3.2.2",
+    "eslint": "^4.15.0",
+    "eslint-config-airbnb": "^16.1.0",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-config-prettier": "^2.9.0",
+    "eslint-plugin-flowtype": "^2.41.0",
+    "eslint-plugin-import": "^2.8.0",
+    "eslint-plugin-jsx-a11y": "^6.0.3",
+    "eslint-plugin-prettier": "^2.4.0",
+    "eslint-plugin-react": "^7.5.1",
+    "eslint-plugin-react-native": "^3.2.0",
+    "eslint-plugin-standard": "^3.0.1",
+    "flow-bin": "~0.56.0",
+    "jest": "^21.2.1",
+    "prettier": "^1.8.2",
+    "react": "16.0.0",
+    "react-dom": "16.0.0",
+    "react-native": "~0.50.4",
+    "react-test-renderer": "16.2.0"
+  },
+  "peerDependencies": {
+    "react": "*",
+    "react-native": "*"
+  },
+  "jest": {
+    "preset": "react-native",
+    "setupFiles": [
+      "<rootDir>/__setup__/enzyme.js"
+    ],
+    "modulePathIgnorePatterns": [
+      "<rootDir>/example/node_modules"
+    ],
+    "snapshotSerializers": [
+      "enzyme-to-json/serializer"
+    ]
+  }
+}
