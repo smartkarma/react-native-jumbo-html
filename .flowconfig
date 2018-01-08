@@ -47,6 +47,8 @@ experimental.strict_type_args=true
 
 munge_underscores=true
 
+module.name_mapper='^react-native-jumbo-html$' -> '<PROJECT_ROOT>/src'
+
 module.name_mapper='^expo$' -> 'emptyObject'
 module.name_mapper='^react-native-gesture-handler$' -> 'emptyObject'
 

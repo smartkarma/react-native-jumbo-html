@@ -30,7 +30,9 @@
   },
   "homepage": "https://github.com/smartkarma/react-native-jumbo-html#readme",
   "dependencies": {
+    "collapse-whitespace": "^1.1.6",
     "css-to-react-native": "^2.0.4",
+    "htmlclean": "^3.0.5",
     "htmlparser2-without-node-native": "^3.9.2",
     "prop-types": "^15.6.0"
   },

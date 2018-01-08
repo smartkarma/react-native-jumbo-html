@@ -42,7 +42,8 @@ Each component in the `mappings` object will receive the following props:
 #### Example
 
 ```js
-import { StyleSheet, TouchableWithoutFeedback } from 'react-native`;
+import * as React from 'react';
+import { StyleSheet } from 'react-native';
 import { HTMLRenderer } from 'react-native-jumbo-html';
 import CustomImage from './CustomImage';
 

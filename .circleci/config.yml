@@ -22,7 +22,7 @@ jobs:
             - v1-dependencies-example-
       - run: |
           yarn install
-          yarn install --cwd example
+          cd example; yarn install; cd ..
       - save_cache:
           key: v1-dependencies-{{ checksum "package.json" }}
           paths: node_modules

@@ -73,7 +73,7 @@ export default class ImageRenderer extends React.PureComponent<Props, State> {
   };
 
   render() {
-    const { tagName, attrs, classList, style, ...rest } = this.props;
+    const { tagName, attrs, classList, style, children, ...rest } = this.props;
 
     if (this.state.error) {
       return (

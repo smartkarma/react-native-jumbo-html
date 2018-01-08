@@ -1,0 +1,9 @@
+{
+  "settings": {
+    "import/core-modules": [ "expo", "react-native-jumbo-html" ]
+  },
+
+  "rules": {
+    "react/prop-types": "off",
+  }
+}

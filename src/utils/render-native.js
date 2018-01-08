@@ -115,7 +115,7 @@ export const mappings = {
 
 export default function renderNative(
   node: HTMLNode | string,
-  customMappings: { [tag: string]: Function },
+  customMappings: ?{ [tag: string]: Function },
   sheets: any[]
 ) {
   if (typeof node === "string") {

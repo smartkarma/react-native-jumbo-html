@@ -1,6 +1,7 @@
 /* @flow */
 
 import HTMLParser from "htmlparser2-without-node-native";
+import clean from "htmlclean";
 
 export class HTMLNode {
   constructor(type: string, attrs: {}) {
@@ -49,7 +50,7 @@ export default function parseHTML(content: string): HTMLNode {
     { decodeEntities: true }
   );
 
-  html.write(content.trim());
+  html.write(clean(content));
   html.end();
 
   return root;

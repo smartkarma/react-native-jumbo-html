@@ -3,7 +3,7 @@
 
 import { PureComponent } from "react";
 import PropTypes from "prop-types";
-import { StyleSheet } from "react-native";
+import { StyleSheet, Platform } from "react-native";
 import TextStylePropTypes from "react-native/Libraries/Text/TextStylePropTypes";
 import parseHTML from "../utils/parse-html";
 import renderNative from "../utils/render-native";
@@ -11,8 +11,8 @@ import filterStyles from "../utils/filter-styles";
 
 type Props = {
   html: string,
-  mappings: { [tag: string]: Function },
-  sheet: { [tag: string]: any }
+  mappings?: { [tag: string]: Function },
+  sheet?: Object
 };
 
 const channel = ":root-text-styles";
@@ -51,12 +51,21 @@ export default class HTMLRenderer extends PureComponent<Props, void> {
   textStyleCache = null;
 
   render() {
-    return renderNative(parseHTML(this.props.html), this.props.mappings, [
-      styles, // eslint-disable-line no-use-before-define
-      this.props.sheet
-    ]);
+    const sheets = [styles];
+
+    if (this.props.sheet) {
+      sheets.push(this.props.sheet);
+    }
+
+    return renderNative(
+      parseHTML(this.props.html),
+      this.props.mappings,
+      sheets
+    );
   }
 }
+
+const MONOSPACE_FONT = Platform.OS === "ios" ? "Courier New" : "monospace";
 
 const styles = StyleSheet.create({
   h1: {
@@ -105,26 +114,22 @@ const styles = StyleSheet.create({
     borderLeftWidth: 2,
     fontStyle: "italic"
   },
-  figure: {
-    marginVertical: 14,
-    marginHorizontal: 40
-  },
   hr: {
     height: StyleSheet.hairlineWidth,
     backgroundColor: "lightgrey",
     marginVertical: 7
   },
   pre: {
-    fontFamily: "Courier New"
+    fontFamily: MONOSPACE_FONT
   },
   code: {
-    fontFamily: "Courier New"
+    fontFamily: MONOSPACE_FONT
   },
   kbd: {
-    fontFamily: "Courier New"
+    fontFamily: MONOSPACE_FONT
   },
   samp: {
-    fontFamily: "Courier New"
+    fontFamily: MONOSPACE_FONT
   },
   a: {
     color: "blue",
