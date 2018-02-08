@@ -1,4 +1,4 @@
-# React Native Jumbo HTML
+# React Native Jumbo HTML 🐘
 
 [![Build Status][build-badge]][build]
 [![Version][version-badge]][package]
@@ -41,6 +41,8 @@ Each component in the `mappings` object will receive the following props:
 
 #### Example
 
+For quick working demo, use Expo app to preview the example: https://expo.io/@usrbowe2/jumbo-html
+
 ```js
 import * as React from 'react';
 import { StyleSheet } from 'react-native';
@@ -81,7 +83,7 @@ The default list of mappings. You can reuse the mappings when adding additional 
 
 ## Contributing
 
-While developing, you can run the [example app](/example/README.md) to test your changes.
+While developing, you can run the [example app](/example/) to test your changes.
 
 Make sure your code passes Flow and ESLint. Run the following to verify:
 
