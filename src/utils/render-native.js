@@ -167,6 +167,7 @@ export default function renderNative(
     tagName: node.type,
     classList,
     attrs: node.attrs,
+    parentNode: node.parentNode,
     // Replace the style attribute with our style object
     style: [
       // Select styles from provided styles sheet objects based on the selectors
