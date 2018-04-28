@@ -19,6 +19,15 @@ const html = `
       <h6>h6 Pack my box with five dozen liquor jugs.</h6>
     </hgroup>
   </section>
+  <br/>
+  <p>My awesome text <strong>in html</strong><br>hi</p>
+  <br/>
+  <div>
+    br in div
+    <br/>
+    <br/>
+    new line
+  </div>
   <hr>
   <section>
     <header>
