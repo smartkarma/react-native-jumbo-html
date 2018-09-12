@@ -30,33 +30,47 @@ export default class BlockRenderer extends React.PureComponent<RendererProps> {
     // This is useful to set global styles such as fonts
     const rootStyles = this.context[channel];
 
-    const isChildrenInline = React.Children.toArray(children).every(
-      child =>
-        child
-          ? typeof child === "string" ||
-            INLINE_TAGS.includes(child.props.tagName)
-          : true
-    );
+    const childrenGroups = [];
+
+    React.Children.toArray(children).forEach(child => {
+      const isInline =
+        child &&
+        (typeof child === "string" ||
+          INLINE_TAGS.includes(child.props.tagName));
+      const lastGroup =
+        childrenGroups.length > 0
+          ? childrenGroups[childrenGroups.length - 1]
+          : null;
+      if (lastGroup && lastGroup.isInline === isInline) {
+        lastGroup.children.push(child);
+      } else {
+        childrenGroups.push({
+          key: childrenGroups.length,
+          isInline,
+          children: [child]
+        });
+      }
+    });
 
     return (
       <View {...rest} style={viewStyles}>
-        {isChildrenInline ? (
-          <TextRenderer style={textStyles}>{children}</TextRenderer>
-        ) : (
-          React.Children.map(children, child => {
-            if (typeof child === "string") {
-              // Since View cannot contain string, nest it in text renderer
-              return <TextRenderer style={textStyles}>{child}</TextRenderer>;
-            }
-
-            if (child) {
-              return React.cloneElement(child, {
-                style: [rootStyles, textStyles, child.props.style]
-              });
-            }
-
-            return child;
-          })
+        {childrenGroups.map(
+          group =>
+            group.isInline ? (
+              <TextRenderer key={group.key} style={textStyles}>
+                {group.children}
+              </TextRenderer>
+            ) : (
+              React.Children.map(group.children, child => {
+                if (child) {
+                  return React.cloneElement(child, {
+                    key: group.key,
+                    style: [rootStyles, textStyles, child.props.style]
+                  });
+                }
+                return child;
+              })
+            )
         )}
       </View>
     );
