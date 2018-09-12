@@ -7,6 +7,7 @@ import TextRenderer from "../renderers/text-renderer";
 import ImageRenderer from "../renderers/image-renderer";
 import IframeRenderer from "../renderers/iframe-renderer";
 import ListRenderer from "../renderers/list-renderer";
+import BrRenderer from "../renderers/br-renderer";
 import { HTMLNode } from "./parse-html";
 
 export type RendererProps = {
@@ -110,7 +111,8 @@ export const mappings = {
   img: ImageRenderer,
   iframe: IframeRenderer,
   ul: ListRenderer,
-  ol: ListRenderer
+  ol: ListRenderer,
+  br: BrRenderer
 };
 
 export default function renderNative(
